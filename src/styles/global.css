@@ -28,3 +28,8 @@
     --color-text-2: var(--color-buccaneer);
     --color-text-3: var(--color-bole);
 }
+
+section {
+  padding-left: 30px;
+  padding-right: 30px;
+}
