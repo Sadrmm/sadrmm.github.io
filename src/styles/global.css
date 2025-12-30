@@ -30,6 +30,12 @@
 }
 
 section {
+  padding-top: 80px;
+  padding-bottom: 80px;
   padding-left: 30px;
   padding-right: 30px;
+}
+
+ul > li {
+  margin-bottom: 8px;
 }
