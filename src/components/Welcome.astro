@@ -7,8 +7,11 @@ import GitHub from "../assets/svg/github.svg";
 import ItchIO from "../assets/svg/itchio.svg";
 ---
 
-<section class="flex flex-row bg-bg-1 pt-20 pb-20">
-	<div class="basis-[60%] flex flex-col">
+<section class="flex flex-col md:flex-row bg-bg-1 pt-20 pb-20">
+	<div class="md:order-2 md:basis-[40%] justify-items-center mt-7 mb-7">
+		<img src="src/assets/profile_picture.jpg" class="h-100 rounded-lg">
+	</div>
+	<div class="md:order-1 md:basis-[60%] flex flex-col">
 		<h3 class="text-3xl font-bold text-text-1">
 			Hi! My name is <span class="text-skin">Adrián Mon Maroto</span>
 		</h3>
@@ -36,8 +39,5 @@ import ItchIO from "../assets/svg/itchio.svg";
 			/>
 			<SeeCVButton extraClass="col-span-3 justify-self-stretch" />
 		</div>
-	</div>
-	<div class="basis-[40%] justify-items-center">
-		<img src="src/assets/profile_picture.jpg" class="h-100 rounded-lg">
 	</div>
 </section>
