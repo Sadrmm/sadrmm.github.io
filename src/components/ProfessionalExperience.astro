@@ -1,7 +1,26 @@
 ---
 import SectionTitle from "./SectionTitle.astro"
+import TimeLine from "./TimeLine.astro"
+import ProfessionalExperienceTimeLineElement from "./ProfessionalExperienceTimeLineElement.astro"
 ---
 
 <section class="flex flex-col bg-bg-2">
     <SectionTitle sectionTitle="Professional Experience"/>
+    <TimeLine>
+        <ProfessionalExperienceTimeLineElement
+            title="World Challenge Game"
+            workingPosition="Junior Game Developer"
+            company="World Challenge Game"
+            descriptionForLinks="Available"
+            links={[
+                {href: "https://play.google.com/store/apps/details?id=com.worldchallengegame.app&hl=es_419", label: "Android"},
+                {href: "https://apps.apple.com/es/app/world-challenge-trivia-war/id6741163659", label: "iOS"}
+            ]}
+        >
+            <p>Development of the videogame of the same name and of the game's contender app, World Challenge Trivia War.</p>
+            <br>
+            <p>The game was developed using <strong>Kotlin</strong> with <strong>CreateJS</strong> and <strong>Animate</strong>.</p>
+            <p>The app was developed using <strong>Kotlin</strong> with <strong>NativeScript</strong>.</p>
+        </ProfessionalExperienceTimeLineElement>
+    </TimeLine>
 </section>
