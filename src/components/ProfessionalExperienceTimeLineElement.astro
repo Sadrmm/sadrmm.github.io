@@ -22,7 +22,7 @@ const { title, workingPosition, company, projectImage, projectImageAlt = "", des
 ---
 
 <div class="relative pl-5 overflow-visible ">
-    <div class={`absolute top-2 ${isLastElement ? 'bottom-0' : '-bottom-6'} last:bottom-0 flex items-start -mb-6`}>
+    <div class={`absolute top-2 ${isLastElement ? 'bottom-0' : '-bottom-12'} last:bottom-0 flex items-start`}>
         <div class="absolute -left-2 top-0 w-4 h-4 bg-skin rounded-full"></div>
         <div class="w-px bg-skin h-full"></div>
     </div>
@@ -67,7 +67,7 @@ const { title, workingPosition, company, projectImage, projectImageAlt = "", des
         </div>
         
         <Image
-            class="pl-4 pr-4 rounded w-md h-fit lg:basis-2/5"
+            class="pl-4 pr-4 rounded w-md h-fit lg:basis-2/5 lg:self-center"
             src={projectImage}
             alt={projectImageAlt}
         />
