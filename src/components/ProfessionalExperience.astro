@@ -1,6 +1,7 @@
 ---
 import WcgImage  from "../assets/imgs/wcg-logo.webp";
 import GreyhillIncidentImage from "../assets/imgs/greyhill-incident.webp";
+import BotBowlIVImage from "../assets/imgs/botbowl-iv.webp";
 import HooverImage  from "../assets/imgs/hoover-game.webp"
 
 import SectionTitle from "./SectionTitle.astro"
@@ -37,6 +38,22 @@ import ProfessionalExperienceTimeLineElement from "./ProfessionalExperienceTimeL
             projectImageAlt="Greyhill Incident"
         >
             <p>Work done at Catness Game Studios using Unreal Engine 4 where we had to adapt to the developer's original code, fix the bugs we were finding and make performance improvements and engagement for the different consoles.</p>
+        </ProfessionalExperienceTimeLineElement>
+
+        <ProfessionalExperienceTimeLineElement
+            title="3rd Position in Bot Bowl IV"
+            workingPosition="AI Programmer"
+            company="an internship at the UJI"
+            projectImage={BotBowlIVImage}
+            projectImageAlt="Bot Bowl IV"
+            descriptionForLinks="Full project in"
+            links={[
+                {href: "https://github.com/AdriMon27/BotBowlUJI", label: "AdriMon27/BotBowlUJI"},
+            ]}
+        >
+            <p>Collaboration grant at the UJI in which I worked on the development of a bot for Bot Bowl IV during the months of May, June and July.</p>
+            <br>
+            <p>The bases of the project were given by the organisers of the competition and once I had that, I dedicated myself to making an OSLA algorithm mixing it with logical stopping conditions to the game.</p>
         </ProfessionalExperienceTimeLineElement>
 
         <ProfessionalExperienceTimeLineElement
