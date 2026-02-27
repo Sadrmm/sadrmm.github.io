@@ -21,14 +21,14 @@ interface Props {
 const { title, workingPosition, company, projectImage, projectImageAlt = "", descriptionForLinks, links, isLastElement = false } = Astro.props;
 ---
 
-<div class="relative pl-5 overflow-visible">
+<div class="relative pl-5 overflow-visible ">
     <div class={`absolute top-2 ${isLastElement ? 'bottom-0' : '-bottom-6'} last:bottom-0 flex items-start -mb-6`}>
         <div class="absolute -left-2 top-0 w-4 h-4 bg-skin rounded-full"></div>
         <div class="w-px bg-skin h-full"></div>
     </div>
 
-    <div class="flex flex-col lg:flex-row lg:basis-3/5 gap-10">
-        <div class="ml-4">
+    <div class="flex flex-col lg:flex-row gap-10">
+        <div class="ml-4 lg:basis-3/5">
             <h3 class="text-3xl font-bold text-text-1">
                 {title}
             </h3>
