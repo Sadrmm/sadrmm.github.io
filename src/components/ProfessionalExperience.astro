@@ -1,4 +1,7 @@
 ---
+import WcgImage  from "../assets/imgs/wcg-logo.webp";
+import HooverImage  from "../assets/imgs/hoover-game.webp"
+
 import SectionTitle from "./SectionTitle.astro"
 import TimeLine from "./TimeLine.astro"
 import ProfessionalExperienceTimeLineElement from "./ProfessionalExperienceTimeLineElement.astro"
@@ -11,6 +14,24 @@ import ProfessionalExperienceTimeLineElement from "./ProfessionalExperienceTimeL
             title="World Challenge Game"
             workingPosition="Junior Game Developer"
             company="World Challenge Game"
+            projectImage={WcgImage}
+            projectImageAlt="World Challenge Game"
+            descriptionForLinks="Complete description in"
+            links={[
+                {href: "https://crocolocobear.itch.io/hoover-game", label: "itch.io"},
+            ]}
+        >
+            <p>Development of the videogame of the same name and of the game's contender app, World Challenge Trivia War.</p>
+            <br>
+            <p>The game was developed using <strong>Kotlin</strong> with <strong>CreateJS</strong> and <strong>Animate</strong>.</p>
+            <p>The app was developed using <strong>Kotlin</strong> with <strong>NativeScript</strong>.</p>
+        </ProfessionalExperienceTimeLineElement>
+                <ProfessionalExperienceTimeLineElement
+            title="Litter-Happy Hoover Madness (PC)"
+            workingPosition="Game Programmer"
+            company="collaborative project of UJI with University of Glasgow"
+            projectImage={HooverImage}
+            projectImageAlt="Litter-Happy Hoover Madness"
             descriptionForLinks="Available"
             links={[
                 {href: "https://play.google.com/store/apps/details?id=com.worldchallengegame.app&hl=es_419", label: "Android"},

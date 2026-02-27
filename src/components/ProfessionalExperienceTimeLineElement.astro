@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from 'astro';
+
 interface LinkWithLabel {
     href: string;
     label: string;
@@ -8,55 +11,66 @@ interface Props {
     title: string;
     workingPosition: string;
     company: string;
+    projectImage: ImageMetadata;
+    projectImageAlt: string;
     descriptionForLinks?: string;
     links?: LinkWithLabel[];
     isLastElement?: boolean;
 }
 
-const { title, workingPosition, company, descriptionForLinks, links, isLastElement = false } = Astro.props;
+const { title, workingPosition, company, projectImage, projectImageAlt = "", descriptionForLinks, links, isLastElement = false } = Astro.props;
 ---
 
 <div class="relative pl-5 overflow-visible">
-    <div class={`absolute top-2 ${isLastElement ? 'bottom-0' : '-bottom-6'} last:bottom-0 flex items-start`}>
+    <div class={`absolute top-2 ${isLastElement ? 'bottom-0' : '-bottom-6'} last:bottom-0 flex items-start -mb-6`}>
         <div class="absolute -left-2 top-0 w-4 h-4 bg-skin rounded-full"></div>
         <div class="w-px bg-skin h-full"></div>
     </div>
 
-    <div class="ml-4">
-        <h3 class="text-3xl font-bold text-text-1">
-            {title}
-        </h3>
-        <h4 class="text-xl font-bold text-text-2 mb-5">
-            <span class="text-skin">{workingPosition}</span> in {company}
-        </h4>
-
-        <div class="text-text-2 mb-5">
-            <slot/>
+    <div class="flex flex-col lg:flex-row lg:basis-3/5 gap-10">
+        <div class="ml-4">
+            <h3 class="text-3xl font-bold text-text-1">
+                {title}
+            </h3>
+            <h4 class="text-xl font-bold text-text-2 mb-5">
+                <span class="text-skin">{workingPosition}</span> in {company}
+            </h4>
+    
+            <div class="text-text-2 mb-5">
+                <slot/>
+            </div>
+    
+            <div class="text-text-2">
+                { descriptionForLinks && links?.length ? (
+                    <p>
+                    {descriptionForLinks} in {""}
+                    
+                    {links.map((item, i) => {
+                        const isLast = i === links.length - 1;
+                        const isSecondLast = i === links.length - 2;
+    
+                        return (
+                        <>
+                            <a
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="underline underline-offset-4"
+                            >{item.label}</a>
+                            {!isLast && (isSecondLast ? " and " : ", ")}
+                        </>
+                        );
+                    })}
+                    </p>
+                ) : null }
+            </div>
         </div>
-
-        <div class="text-text-2">
-            { descriptionForLinks && links?.length ? (
-                <p>
-                {descriptionForLinks} in {""}
-                
-                {links.map((item, i) => {
-                    const isLast = i === links.length - 1;
-                    const isSecondLast = i === links.length - 2;
-
-                    return (
-                    <>
-                        <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="underline underline-offset-4"
-                        >{item.label}</a>
-                        {!isLast && (isSecondLast ? " and " : ", ")}
-                    </>
-                    );
-                })}
-                </p>
-            ) : null }
-        </div>
+        
+        <Image
+            class="pl-4 pr-4 rounded w-md h-fit lg:basis-2/5"
+            src={projectImage}
+            alt={projectImageAlt}
+        />
     </div>
 </div>
+
