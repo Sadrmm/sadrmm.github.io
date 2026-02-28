@@ -16,6 +16,8 @@
     --color-buccaneer: #613030;
     --color-bole: #7A3E3E;
 
+    --color-snow: #fff9f9;
+
 
     --color-bg-1: var(--color-white-marble);
     --color-bg-2: var(--color-soft-misty-cyan);
@@ -27,6 +29,10 @@
     --color-text-1: var(--color-dark-rosewood);
     --color-text-2: var(--color-buccaneer);
     --color-text-3: var(--color-bole);
+}
+
+.btn-hover {
+  @apply hover:scale-110 hover:shadow-md hover:cursor-pointer;
 }
 
 section {
