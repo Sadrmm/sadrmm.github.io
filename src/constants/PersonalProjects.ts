@@ -8,6 +8,7 @@ export const PROJECT_TAGS = {
     application: {label: 'Application', color: '#FCC600'},
     other: {label: 'Other', color: '#D77016'},
     csharp: {label: 'C#', color: '#684D95'},
+    kotlin: {label: 'Kotlin', color: '#E24462'},
     unity: {label: 'Unity', color: '#393939'},
     android_studio: {label: 'Android Studio', color: '#78C257'},
     prototype: {label: 'Prototype', color: '#AA0E0E'}
