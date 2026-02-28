@@ -1,0 +1,17 @@
+---
+interface Props {
+    sectionTitle: string;
+}
+
+const { sectionTitle } = Astro.props;
+---
+
+<div class="mb-15">
+    <h2
+        class="text-4xl font-bold text-text-1 relative
+        before:content-[''] before:h-1 before:w-12.5 before:absolute before:top-full before:left-0 before:bg-skin
+        after:content-[''] after:h-1 after:w-6 after:absolute after:top-full after:left-0 after:mt-2 after:bg-skin"
+    >
+        {sectionTitle}
+    </h2>
+</div>
