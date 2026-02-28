@@ -3,13 +3,13 @@ export const PROJECT_CATEGORIES = [
 ] as const;
 export type ProjectCategory = typeof PROJECT_CATEGORIES[number];
 
-export const COLOR_BY_TAG = {
-    game: '#17689C',
-    application: '#FCC600',
-    other: '#D77016',
-    csharp: '#684D95',
-    unity: '#393939',
-    android_studio: '#78C257',
-    prototype: '#AA0E0E'
+export const PROJECT_TAGS = {
+    game: {label: 'Game', color: '#17689C'},
+    application: {label: 'Application', color: '#FCC600'},
+    other: {label: 'Other', color: '#D77016'},
+    csharp: {label: 'C#', color: '#684D95'},
+    unity: {label: 'Unity', color: '#393939'},
+    android_studio: {label: 'Android Studio', color: '#78C257'},
+    prototype: {label: 'Prototype', color: '#AA0E0E'}
 } as const;
-export type ColorByTag = typeof COLOR_BY_TAG[keyof typeof COLOR_BY_TAG];
+export type ProjectTags = typeof PROJECT_TAGS[keyof typeof PROJECT_TAGS];

@@ -17,7 +17,7 @@ const { activeCategory = PROJECT_CATEGORIES[0] } = Astro.props;
                     : 'text-text-1'
             }
                     btn-hover`}
-            data-filter = {category}
+            data-filter={category}
         >
             {category.charAt(0).toUpperCase() + category.slice(1)}
         </button>
