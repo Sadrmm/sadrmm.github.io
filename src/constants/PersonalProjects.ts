@@ -3,10 +3,14 @@ export const PROJECT_CATEGORIES = [
 ] as const;
 export type ProjectCategory = typeof PROJECT_CATEGORIES[number];
 
+export const COLOR_BY_CATEGORY: Record<ProjectCategory, string> = {
+    All: '#FFFFFF',
+    Game: '#17689C',
+    Application: '#FCC600',
+    Other: '#D77016'
+}
+
 export const PROJECT_TAGS = {
-    game: {label: 'Game', color: '#17689C'},
-    application: {label: 'Application', color: '#FCC600'},
-    other: {label: 'Other', color: '#D77016'},
     csharp: {label: 'C#', color: '#684D95'},
     kotlin: {label: 'Kotlin', color: '#E24462'},
     unity: {label: 'Unity', color: '#393939'},

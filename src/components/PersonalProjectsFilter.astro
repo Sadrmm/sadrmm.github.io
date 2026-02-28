@@ -25,8 +25,6 @@ const { activeCategory = PROJECT_CATEGORIES[0] } = Astro.props;
 </div>
 
 <script>
-import { PROJECT_CATEGORIES } from "@/constants/PersonalProjects";
-
     const textSkinClass = 'text-skin';
     const textText1Class = 'text-text-1';
 
@@ -36,9 +34,11 @@ import { PROJECT_CATEGORIES } from "@/constants/PersonalProjects";
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const filter = button.getAttribute('data-filter');
+            const isAll = filter === buttons[0].getAttribute('data-filter');
+
             itemsToFilter.forEach(item => {
                 const category = item.getAttribute('data-category');
-                if (filter === PROJECT_CATEGORIES[0] || category === filter) {
+                if (isAll || category === filter) {
                     item.classList.remove('hidden');
                 } else {
                     item.classList.add('hidden');
