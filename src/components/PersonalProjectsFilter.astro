@@ -1,0 +1,25 @@
+---
+import { PROJECT_CATEGORIES, type ProjectCategory } from '@/constants/PersonalProjects.ts';
+
+interface Props {
+    activeCategory?: ProjectCategory;
+}
+
+const { activeCategory = PROJECT_CATEGORIES[0] } = Astro.props;
+---
+
+<div class="flex flex-row flex-wrap gap-5 justify-center">
+    {PROJECT_CATEGORIES.map((category) => (
+        <button
+            class={`px-4 py-2 rounded-md text-lg border-2 bg-snow transition-all duration-300 ${
+                activeCategory === category
+                    ? 'text-skin'
+                    : 'text-text-1'
+            }
+                    btn-hover`}
+            data-filter = {category}
+        >
+            {category.charAt(0).toUpperCase() + category.slice(1)}
+        </button>
+    ))}
+</div>
