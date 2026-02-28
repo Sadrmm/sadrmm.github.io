@@ -23,3 +23,34 @@ const { activeCategory = PROJECT_CATEGORIES[0] } = Astro.props;
         </button>
     ))}
 </div>
+
+<script>
+import { PROJECT_CATEGORIES } from "@/constants/PersonalProjects";
+
+    const textSkinClass = 'text-skin';
+    const textText1Class = 'text-text-1';
+
+    const buttons = document.querySelectorAll('button[data-filter]');
+    const itemsToFilter = document.querySelectorAll('[data-category]');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            itemsToFilter.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === PROJECT_CATEGORIES[0] || category === filter) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+            
+            buttons.forEach(btn => {
+                btn.classList.remove(textSkinClass);
+                btn.classList.add(textText1Class);
+            });
+            button.classList.remove(textText1Class);
+            button.classList.add(textSkinClass);
+        });
+    });
+</script>
