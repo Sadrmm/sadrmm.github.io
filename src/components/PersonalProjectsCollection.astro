@@ -11,7 +11,10 @@ const personalProjects = (await getCollection("personal-projects")).sort(
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {personalProjects.map((project) => (
-        <div
+        <a
+            href={project.data.url}
+            target="_blank"
+            rel="noopener noreferrer"
             class="flex basis-1/3 btn-hover transition-all duration-300 text-text-2 rounded-md border-b-2"
             data-category={project.data.category}
         >
@@ -49,6 +52,6 @@ const personalProjects = (await getCollection("personal-projects")).sort(
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
     ))}
 </div>

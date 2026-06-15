@@ -22,6 +22,7 @@ const personalProjects = defineCollection({
         imgAlt: z.string(),
         category: z.enum(projectCategories),
         tags: z.array(z.enum(projectTags)),
+        url: z.string().url(),
     }),
 })
 
