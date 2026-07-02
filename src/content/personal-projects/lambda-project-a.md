@@ -1,7 +1,7 @@
 ---
 title: Lambda Project A
 year: 2022
-img: ../../assets/imgs/dummy_1920x1080.png
+img: ../../assets/imgs/lambda-project-a.webp
 imgAlt: Lambda Project A
 category: Game
 tags: 

@@ -1,7 +1,7 @@
 ---
 title: A-Viajar
 year: 2022
-img: ../../assets/imgs/dummy_1920x1080.png
+img: ../../assets/imgs/a-viajar-logo.webp
 imgAlt: A-Viajar
 category: Application
 tags: 

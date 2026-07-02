@@ -1,7 +1,7 @@
 ---
 title: Bienvenidos a Villaconocida
 year: 2021
-img: ../../assets/imgs/dummy_1920x1080.png
+img: ../../assets/imgs/bienvenidos-a-villaconocida.webp
 imgAlt: Bienvenidos a Villaconocida
 category: Game
 tags: 
