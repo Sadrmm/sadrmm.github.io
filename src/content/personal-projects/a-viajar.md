@@ -1,6 +1,6 @@
 ---
 title: A-Viajar
-year: 2022
+date: 2022-09-12
 img: ../../assets/imgs/a-viajar-logo.webp
 imgAlt: A-Viajar
 category: Application

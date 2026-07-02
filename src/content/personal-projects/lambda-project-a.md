@@ -1,6 +1,6 @@
 ---
 title: Lambda Project A
-year: 2022
+date: 2022-05-20
 img: ../../assets/imgs/lambda-project-a.webp
 imgAlt: Lambda Project A
 category: Game

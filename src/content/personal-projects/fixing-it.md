@@ -1,6 +1,6 @@
 ---
 title: Fixing IT
-year: 2023
+date: 2023-07-13
 img: ../../assets/imgs/fixing-it.webp
 imgAlt: Fixing IT
 category: Game

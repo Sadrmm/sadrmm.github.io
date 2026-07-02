@@ -1,6 +1,6 @@
 ---
 title: 1 Night at Moncho's
-year: 2024
+date: 2024-10-27
 img: ../../assets/imgs/one-night-at-monchos.webp
 imgAlt: 1 Night al Moncho's
 category: Game

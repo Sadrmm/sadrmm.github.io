@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 import { PROJECT_TAGS, COLOR_BY_CATEGORY } from '@/constants/PersonalProjects.ts';
 
 const personalProjects = (await getCollection("personal-projects")).sort(
-    (a, b) => b.data.year - a.data.year
+    (a, b) => b.data.date.getTime() - a.data.date.getTime()
 )
 ---
 
@@ -27,7 +27,7 @@ const personalProjects = (await getCollection("personal-projects")).sort(
                     <span class="absolute left-3.5 bottom-3.5
                         text-sm font-semibold text-snow rounded-sm px-2.5 py-1 bg-skin"
                     >
-                        {project.data.year}
+                        {project.data.date.getFullYear()}
                     </span>
                 </div>
                 <div class="m-3.5">

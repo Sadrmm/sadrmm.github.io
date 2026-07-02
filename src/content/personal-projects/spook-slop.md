@@ -1,6 +1,6 @@
 ---
 title: Spook Slop
-year: 2023
+date: 2023-10-29
 img: ../../assets/imgs/spook-slop.webp
 imgAlt: Spook Slop
 category: Game

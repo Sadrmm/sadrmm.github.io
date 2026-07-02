@@ -17,7 +17,7 @@ const projectTags = Object.keys(PROJECT_TAGS) as [
 const personalProjects = defineCollection({
     schema: ({ image }) => z.object({
         title: z.string(),
-        year: z.number(),
+        date: z.date(),
         img: image(),
         imgAlt: z.string(),
         category: z.enum(projectCategories),

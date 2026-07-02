@@ -1,6 +1,6 @@
 ---
 title: Beyond Phobias
-year: 2021
+date: 2021-02-17
 img: ../../assets/imgs/beyond-phobias-gameplay.webp
 imgAlt: Beyond Phobias
 category: Game

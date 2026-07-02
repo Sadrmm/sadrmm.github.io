@@ -1,6 +1,6 @@
 ---
 title: Bienvenidos a Villaconocida
-year: 2021
+date: 2022-01-22
 img: ../../assets/imgs/bienvenidos-a-villaconocida.webp
 imgAlt: Bienvenidos a Villaconocida
 category: Game
