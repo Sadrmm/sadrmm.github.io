@@ -11,10 +11,12 @@ export const COLOR_BY_CATEGORY: Record<ProjectCategory, string> = {
 }
 
 export const PROJECT_TAGS = {
+    android_studio: {label: 'Android Studio', color: '#78C257'},
+    astro: {label: 'Astro', color: '#E2398D'},
     csharp: {label: 'C#', color: '#684D95'},
     kotlin: {label: 'Kotlin', color: '#E24462'},
-    unity: {label: 'Unity', color: '#393939'},
-    android_studio: {label: 'Android Studio', color: '#78C257'},
-    prototype: {label: 'Prototype', color: '#AA0E0E'}
+    prototype: {label: 'Prototype', color: '#AA0E0E'},
+    tailwind: {label: 'Tailwind', color: '#38BDF8'},
+    unity: {label: 'Unity', color: '#393939'}
 } as const;
 export type ProjectTags = typeof PROJECT_TAGS[keyof typeof PROJECT_TAGS];
