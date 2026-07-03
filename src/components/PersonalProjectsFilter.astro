@@ -1,0 +1,56 @@
+---
+import { PROJECT_CATEGORIES, type ProjectCategory } from '@/constants/PersonalProjects.ts';
+
+interface Props {
+    activeCategory?: ProjectCategory;
+}
+
+const { activeCategory = PROJECT_CATEGORIES[0] } = Astro.props;
+---
+
+<div class="flex flex-row flex-wrap gap-5 justify-center mb-10">
+    {PROJECT_CATEGORIES.map((category) => (
+        <button
+            class={`px-4 py-2 rounded-md text-lg border-b-2 bg-snow transition-all duration-300 ${
+                activeCategory === category
+                    ? 'text-skin'
+                    : 'text-text-1'
+            }
+                    btn-hover`}
+            data-filter={category}
+        >
+            {category.charAt(0).toUpperCase() + category.slice(1)}
+        </button>
+    ))}
+</div>
+
+<script>
+    const textSkinClass = 'text-skin';
+    const textText1Class = 'text-text-1';
+
+    const buttons = document.querySelectorAll('button[data-filter]');
+    const itemsToFilter = document.querySelectorAll('[data-category]');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            const isAll = filter === buttons[0].getAttribute('data-filter');
+
+            itemsToFilter.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (isAll || category === filter) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+            
+            buttons.forEach(btn => {
+                btn.classList.remove(textSkinClass);
+                btn.classList.add(textText1Class);
+            });
+            button.classList.remove(textText1Class);
+            button.classList.add(textSkinClass);
+        });
+    });
+</script>
