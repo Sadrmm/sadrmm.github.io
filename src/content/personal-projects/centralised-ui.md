@@ -1,7 +1,7 @@
 ---
 title: Centralised UI
 date: 2023-11-26
-img: ../../assets/imgs/centralised-ui.svg
+img: ../../assets/svg/centralised-ui.svg
 imgAlt: Centralised UI
 category: Other
 tags: 
