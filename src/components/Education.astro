@@ -1,7 +1,26 @@
 ---
-import SectionTitle from "@/components/SectionTitle.astro";
+import SectionTitle from "@/components/SectionTitle.astro"
+import TimeLine from "./TimeLine.astro"
+import EducationTimeLineElement from "./EducationTimeLineElement.astro"
 ---
 
 <section class="flex flex-col bg-bg-2">
     <SectionTitle sectionTitle="Education"/>
+    <TimeLine>
+        <EducationTimeLineElement
+            title="Bachelor's Degree in Videogame Design and Development"
+            placesDurations={[
+                {
+                    place: "Universitat Jaume I",
+                    initialYear: 2019,
+                    finalYear: 2023
+                },
+                {
+                    place: "Universität Bremen (Erasmus)",
+                    initialYear: 2022,
+                    finalYear: 2023
+                },
+            ]}>
+        </EducationTimeLineElement>
+    </TimeLine>
 </section>
