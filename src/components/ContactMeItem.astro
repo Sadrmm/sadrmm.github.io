@@ -17,7 +17,12 @@ const { icon: Icon, iconLabel, value }: Props = Astro.props;
     <span class="text-text-1 text-lg font-bold">{iconLabel}</span>
 
     <div class="flex gap-3 items-center">
-        <span class="copy-value text-text-3">{value}</span>
+        <span
+            class="copy-value text-text-3"
+            data-value={value}
+        >
+            {value}
+        </span>
         <button
             class="copy-btn flex items-center justify-center rounded-4xl bg-skin w-20 h-10 btn-hover transition-transform duration-300"
             aria-label={`Copy ${iconLabel}`}
@@ -29,63 +34,3 @@ const { icon: Icon, iconLabel, value }: Props = Astro.props;
         </button>
     </div>
 </div>
-
-<script type="module">
-    const loadingTime = 500
-    const backToIconTime = 1500
-
-    document.querySelectorAll(".contact-item").forEach((item) => {
-        const button = item.querySelector(".copy-btn")
-        const valueElement = item.querySelector(".copy-value")
-
-        if (!button || !valueElement) {
-            return
-        }
-
-        const copyIcon = button.querySelector(".copy-icon")
-        const spinnerIcon = button.querySelector(".spinner-icon")
-        const checkIcon = button.querySelector(".check-icon")
-        const errorIcon = button.querySelector(".error-icon")
-
-        if (!copyIcon
-            || !spinnerIcon
-            || !checkIcon
-            || !errorIcon
-        ) {
-            return
-        }
-
-        function showState(state) {
-            copyIcon.classList.toggle("hidden", state !== "copy")
-            spinnerIcon.classList.toggle("hidden", state !== "loading")
-            checkIcon.classList.toggle("hidden", state !== "success")
-            errorIcon.classList.toggle("hidden", state !== "error")
-        }
-
-        button.addEventListener("click", () => {
-            console.log("Copying value:", valueElement.textContent)
-            showState("loading")
-
-            //navigator.clipboard
-                //.writeText(valueElement.textContent)
-                Promise.reject(new Error("Test error"))
-                .then(() => {
-                    setTimeout(() => {  // false loading
-                        showState("success")
-                    }, loadingTime)
-                })
-                .catch((error) => {
-                    setTimeout(() => {  // false loading
-                        showState("error")
-                        console.error("Error copying it:", error)
-                        alert("It couldn't be copied. You can manually select and copy it.")
-                    }, loadingTime)
-                })
-                .finally(() => {
-                    setTimeout(() => {
-                        showState("copy")
-                    }, backToIconTime)
-                })
-        })
-    })
-</script>
