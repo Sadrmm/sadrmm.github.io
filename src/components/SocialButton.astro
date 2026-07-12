@@ -2,16 +2,19 @@
 interface Props {
     href: string;
     icon: any;
+    anchorSize?: string;
+    anchorRounded?: string;
+    iconSize?: string;
 }
 
-const { href, icon: Icon }: Props = Astro.props;
+const { href, icon: Icon, anchorSize="w-17.5 h-17.5", anchorRounded="rounded-[25%]", iconSize="w-12.5 h-12.5" }: Props = Astro.props;
 ---
 
 <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    class="flex btn-hover transition-transform duration-300 items-center justify-center w-17.5 h-17.5 leading-17.5 rounded-[25%] text-5xl text-bg-1 bg-skin"
+    class={`flex btn-hover transition-transform duration-300 items-center justify-center ${anchorSize} leading-${anchorSize.split(' ')[1]} ${anchorRounded} text-5xl text-bg-1 bg-skin`}
 >
-    <Icon class="w-12.5 h-12.5"/>
+    <Icon class={iconSize}/>
 </a>
