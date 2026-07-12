@@ -1,0 +1,91 @@
+---
+import Copy from '@/assets/svg/copy.svg'
+import Spinner from '@/assets/svg/spinner.svg'
+import Check from '@/assets/svg/check.svg'
+
+interface Props {
+    icon: any;
+    iconLabel: string;
+    value: string;
+}
+
+const { icon: Icon, iconLabel, value }: Props = Astro.props;
+---
+
+<div class="contact-item flex flex-col justify-center mt-4" data-contact>
+    <Icon class="w-12.5 h-12.5 text-skin"/>
+    <span class="text-text-1 text-lg font-bold">{iconLabel}</span>
+
+    <div class="flex gap-3 items-center">
+        <span class="copy-value text-text-3">{value}</span>
+        <button
+            class="copy-btn flex items-center justify-center rounded-4xl bg-skin w-20 h-10 btn-hover transition-transform duration-300"
+            aria-label={`Copy ${iconLabel}`}
+        >
+            <Copy class="copy-icon w-5 h-5 text-bg-1"/>
+            <Spinner class="spinner-icon w-5 h-5 text-bg-1 hidden"/>
+            <Check class="check-icon w-5 h-5 text-bg-1 hidden"/>
+            <span class="error-icon text-lg font-bold text-bg-1 hidden">X</span>
+        </button>
+    </div>
+</div>
+
+<script type="module">
+    const loadingTime = 500
+    const backToIconTime = 1500
+
+    document.querySelectorAll(".contact-item").forEach((item) => {
+        const button = item.querySelector(".copy-btn")
+        const valueElement = item.querySelector(".copy-value")
+
+        if (!button || !valueElement) {
+            return
+        }
+
+        const copyIcon = button.querySelector(".copy-icon")
+        const spinnerIcon = button.querySelector(".spinner-icon")
+        const checkIcon = button.querySelector(".check-icon")
+        const errorIcon = button.querySelector(".error-icon")
+
+        if (!copyIcon
+            || !spinnerIcon
+            || !checkIcon
+            || !errorIcon
+        ) {
+            return
+        }
+
+        function showState(state) {
+            copyIcon.classList.toggle("hidden", state !== "copy")
+            spinnerIcon.classList.toggle("hidden", state !== "loading")
+            checkIcon.classList.toggle("hidden", state !== "success")
+            errorIcon.classList.toggle("hidden", state !== "error")
+        }
+
+        button.addEventListener("click", () => {
+            console.log("Copying value:", valueElement.textContent)
+            showState("loading")
+
+            //navigator.clipboard
+                //.writeText(valueElement.textContent)
+                Promise.reject(new Error("Test error"))
+                .then(() => {
+                    setTimeout(() => {  // false loading
+                        showState("success")
+                    }, loadingTime)
+                })
+                .catch((error) => {
+                    setTimeout(() => {  // false loading
+                        showState("error")
+                        console.error("Error copying it:", error)
+                        alert("It couldn't be copied. You can manually select and copy it.")
+                    }, loadingTime)
+                })
+                .finally(() => {
+                    setTimeout(() => {
+                        showState("copy")
+                    }, backToIconTime)
+                })
+        })
+    })
+</script>
