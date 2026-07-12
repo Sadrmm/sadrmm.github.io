@@ -1,15 +1,19 @@
 ---
+import SocialButton from '@/components/SocialButton.astro'
+
 import Copy from '@/assets/svg/copy.svg'
 import Spinner from '@/assets/svg/spinner.svg'
 import Check from '@/assets/svg/check.svg'
+import OpenSVG from '@/assets/svg/open.svg'
 
 interface Props {
     icon: any;
     iconLabel: string;
     value: string;
+    href: string;
 }
 
-const { icon: Icon, iconLabel, value }: Props = Astro.props;
+const { icon: Icon, iconLabel, value, href }: Props = Astro.props;
 ---
 
 <div class="contact-item flex flex-col justify-center mt-4" data-contact>
@@ -23,6 +27,7 @@ const { icon: Icon, iconLabel, value }: Props = Astro.props;
         >
             {value}
         </span>
+        
         <button
             class="copy-btn flex items-center justify-center rounded-4xl bg-skin w-20 h-10 btn-hover transition-transform duration-300"
             aria-label={`Copy ${iconLabel}`}
@@ -32,5 +37,13 @@ const { icon: Icon, iconLabel, value }: Props = Astro.props;
             <Check class="check-icon w-5 h-5 text-bg-1 hidden"/>
             <span class="error-icon text-lg font-bold text-bg-1 hidden">X</span>
         </button>
+
+        <SocialButton
+            href={href}
+            icon={OpenSVG}
+            anchorSize="w-20 h-10"
+            anchorRounded="rounded-4xl"
+            iconSize="w-5 h-5"
+        />
     </div>
 </div>
