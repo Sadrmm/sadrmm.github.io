@@ -1,0 +1,26 @@
+---
+import SectionTitle from '@/components/SectionTitle.astro'
+
+import Envelope from '@/assets/svg/envelope.svg'
+import Copy from '@/assets/svg/copy.svg'
+---
+
+<section class="flex flex-col bg-bg-1">
+    <SectionTitle sectionTitle="Contact Me"/>
+
+    <div class="flex flex-col items-center justify-center mt-4">
+        <Envelope class="w-12.5 h-12.5 text-skin"/>
+        <span class="text-text-1 text-lg font-bold">Email</span>
+
+        <div class="flex gap-3 items-center">
+            <span class="text-text-3">adri2001mm@gmail.com</span>
+            <button
+                id="copyMailBtn"
+                class="flex items-center justify-center rounded-4xl bg-skin w-20 h-10 btn-hover transition-transform duration-300"
+                aria-label="Copy email"
+            >
+                <Copy class="w-5 h-5 text-bg-1"/>
+            </button>
+        </div>
+    </div>
+</section>
