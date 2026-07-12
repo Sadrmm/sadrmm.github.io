@@ -28,7 +28,7 @@ const { icon: Icon, iconLabel, value }: Props = Astro.props;
             aria-label={`Copy ${iconLabel}`}
         >
             <Copy class="copy-icon w-5 h-5 text-bg-1"/>
-            <Spinner class="spinner-icon w-5 h-5 text-bg-1 hidden"/>
+            <Spinner class="spinner-icon w-5 h-5 text-bg-1 animate-spin hidden"/>
             <Check class="check-icon w-5 h-5 text-bg-1 hidden"/>
             <span class="error-icon text-lg font-bold text-bg-1 hidden">X</span>
         </button>
