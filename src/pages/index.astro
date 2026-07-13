@@ -13,17 +13,16 @@ import ContactMe from '@/components/ContactMe.astro'
 	<Navigation
 		sections={[
 			{ id: 'welcome', label: 'Welcome' },
-			{ id: 'about', label: 'About Me' },
-			{ id: 'experience', label: 'Experience' },
-			{ id: 'projects', label: 'Projects' },
+			{ id: 'professional-experience', label: 'ProfessionalExperience' },
+			{ id: 'personal-projects', label: 'Personal Projects' },
 			{ id: 'education', label: 'Education' },
-			{ id: 'contact', label: 'Contact' }
+			{ id: 'contact-me', label: 'Contact Me' }
 		]}
 	/>
 	<Welcome id="welcome" />
 	<AboutMe id="about" />
-	<ProfessionalExperience id="experience" />
-	<PersonalProjects id="projects" />
+	<ProfessionalExperience id="professional-experience" />
+	<PersonalProjects id="personal-projects" />
 	<Education id="education" />
-	<ContactMe id="contact" />
+	<ContactMe id="contact-me" />
 </Layout>
