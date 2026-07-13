@@ -1,0 +1,27 @@
+---
+interface Props {
+    sections: Section[];
+}
+
+interface Section {
+    id: string;
+    label: string;
+}
+
+const { sections }: Props = Astro.props;
+---
+
+<nav class="flex flex-col bg-bg-3">
+    <ul>
+        {sections.map((section) => (
+            <li>
+                <a
+                    href={`#${section.id}`}
+                    class="font-semibold text-text-1 border-b border-skin"
+                >
+                    {section.label}
+                </a>
+            </li>
+        ))}
+    </ul>
+</nav>

@@ -2,9 +2,14 @@
 import SectionTitle from "@/components/SectionTitle.astro"
 import TimeLine from "./TimeLine.astro"
 import EducationTimeLineElement from "./EducationTimeLineElement.astro"
+
+interface Props {
+	id: string;
+}
+const { id }: Props = Astro.props;
 ---
 
-<section class="flex flex-col bg-bg-2">
+<section id={id} class="flex flex-col bg-bg-2">
     <SectionTitle sectionTitle="Education"/>
     <TimeLine>
         <EducationTimeLineElement

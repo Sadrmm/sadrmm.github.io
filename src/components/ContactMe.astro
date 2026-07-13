@@ -4,9 +4,14 @@ import ContactMeItem from '@/components/ContactMeItem.astro'
 
 import Envelope from '@/assets/svg/envelope.svg'
 import LinkedIn from '@/assets/svg/linkedin.svg'
+
+interface Props {
+	id: string;
+}
+const { id }: Props = Astro.props;
 ---
 
-<section class="flex flex-col bg-bg-1">
+<section id={id} class="flex flex-col bg-bg-1">
     <SectionTitle sectionTitle="Contact Me"/>
 
     <div class="flex flex-col md:flex-row gap-5 justify-evenly">
