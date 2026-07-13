@@ -12,12 +12,12 @@ const { sections }: Props = Astro.props;
 ---
 <aside class="fixed flex flex-col justify-evenly left-0 top-0 z-10 w-aside h-screen items-center bg-bg-3">
     <nav>
-        <ul class="flex flex-col gap-4">
+        <ul class="flex flex-col gap-4 px-[calc(var(--spacing-aside)*0.10)]">
             {sections.map((section) => (
                 <li>
                     <a
                         href={`#${section.id}`}
-                        class="inline-block font-semibold text-text-1 border-b border-borders btn-hover transition-transform duration-300 hover:border-skin"
+                        class="block font-semibold rounded-md px-4 py-1.5 text-text-1 border-b border-borders btn-hover transition-transform duration-300 hover:border-skin"
                     >
                         {section.label}
                     </a>
