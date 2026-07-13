@@ -10,9 +10,14 @@ interface Section {
 
 const { sections }: Props = Astro.props;
 ---
-<aside class="fixed flex flex-col justify-evenly left-0 top-0 z-10 w-aside h-screen items-center bg-bg-3">
-    <nav>
-        <ul class="flex flex-col gap-4 px-[calc(var(--spacing-aside)*0.10)]">
+<aside class="fixed left-0 top-0 z-10 flex flex-col w-aside h-screen p-[calc(var(--spacing-aside)*0.10)] justify-evenly items-center bg-bg-3">
+    
+    <p class="flex basis-1/5 items-center">
+        Logo
+    </p>
+    
+    <nav class="basis-3/5">
+        <ul class="flex flex-col gap-4">
             {sections.map((section) => (
                 <li>
                     <a
@@ -25,4 +30,8 @@ const { sections }: Props = Astro.props;
             ))}
         </ul>
     </nav>
+
+    <footer class="flex basis-1/5 items-end text-text-3 text-sm">
+        © 2026 Adrián Mon Maroto
+    </footer>
 </aside>
