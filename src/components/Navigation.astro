@@ -14,9 +14,14 @@ const { sections }: Props = Astro.props;
 ---
 <aside class="fixed left-0 top-0 z-10 flex flex-col w-aside h-screen p-[calc(var(--spacing-aside)*0.10)] justify-evenly items-center bg-bg-3">
     
-    <p class="flex basis-1/5 items-center">
-        Logo
-    </p>
+    <div class="basis-1/5 flex items-center">
+        <p class="relative text-3xl text-text-3 font-bold tracking-[5px] px-6 py-3
+            before:content-[''] before:h-5 before:w-5 before:absolute before:top-0 before:left-0 before:border-skin before:border-t-4 before:border-l-4
+            after:content-[''] after:h-5 after:w-5 after:absolute after:bottom-0 after:right-0 after:border-skin after:border-b-4 after:border-r-4"
+            >
+            Resume
+        </p>
+    </div>
     
     <nav class="basis-3/5">
         <ul class="flex flex-col gap-4">
