@@ -1,4 +1,6 @@
 ---
+import Envelope from '@/assets/svg/envelope.svg'
+
 interface Props {
     sections: Section[];
 }
@@ -31,7 +33,13 @@ const { sections }: Props = Astro.props;
         </ul>
     </nav>
 
-    <footer class="flex basis-1/5 items-end text-text-3 text-sm">
-        © 2026 Adrián Mon Maroto
+    <footer class="flex flex-col basis-1/5 justify-between gap-4 text-text-3 text-sm">
+        <div>
+            <a href="mailto:adri2001mm@gmail.com" class="hover:underline">
+                adri2001mm@gmail.com
+            </a>
+            <Envelope class="w-5 h-5 inline-block ml-1"/>
+        </div>
+        <p class="text-xs">© 2026 Adrián Mon Maroto</p>
     </footer>
 </aside>
