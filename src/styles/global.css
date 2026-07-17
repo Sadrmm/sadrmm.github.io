@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 @import "tailwindcss";
 /*@plugin "@tailwindcss/typography";*/
 
 @theme {
-
     --color-skin: #4a9;
 
     --color-white-marble: #E4EAE9;
@@ -29,6 +30,8 @@
     --color-text-1: var(--color-dark-rosewood);
     --color-text-2: var(--color-buccaneer);
     --color-text-3: var(--color-bole);
+
+    --spacing-aside: 300px;
 }
 
 .btn-hover {

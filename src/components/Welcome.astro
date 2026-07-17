@@ -5,9 +5,14 @@ import SeeCVButton from "./SeeCVButton.astro";
 import LinkedIn from "../assets/svg/linkedin.svg";
 import GitHub from "../assets/svg/github.svg";
 import ItchIO from "../assets/svg/itchio.svg";
+
+interface Props {
+	id: string;
+}
+const { id }: Props = Astro.props;
 ---
 
-<section class="flex flex-col md:flex-row bg-bg-1 pt-20 pb-20">
+<section id={id} class="flex flex-col md:flex-row bg-bg-1 pt-20 pb-20">
 	<div class="md:order-2 md:basis-[40%] justify-items-center mt-7 mb-7">
 		<img src="src/assets/profile_picture.jpg" class="h-100 rounded-lg">
 	</div>

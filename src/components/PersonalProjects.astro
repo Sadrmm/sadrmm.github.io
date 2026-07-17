@@ -2,9 +2,14 @@
 import SectionTitle from "@/components/SectionTitle.astro";
 import PersonalProjectsFilter from "@/components/PersonalProjectsFilter.astro";
 import PersonalProjectsCollection from "@/components/PersonalProjectsCollection.astro";
+
+interface Props {
+	id: string;
+}
+const { id }: Props = Astro.props;
 ---
 
-<section class="flex flex-col bg-bg-1">
+<section id={id} class="flex flex-col bg-bg-1">
     <SectionTitle sectionTitle="Personal Projects"/>
 
     <PersonalProjectsFilter />

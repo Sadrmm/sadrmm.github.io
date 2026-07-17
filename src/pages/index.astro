@@ -1,18 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Welcome from '../components/Welcome.astro'
-import AboutMe from '../components/AboutMe.astro'
-import ProfessionalExperience from '../components/ProfessionalExperience.astro'
-import PersonalProjects from '../components/PersonalProjects.astro'
-import Education from '../components/Education.astro'
+import Navigation from '@/components/Navigation.astro'
+import Welcome from '@/components/Welcome.astro'
+import AboutMe from '@/components/AboutMe.astro'
+import ProfessionalExperience from '@/components/ProfessionalExperience.astro'
+import PersonalProjects from '@/components/PersonalProjects.astro'
+import Education from '@/components/Education.astro'
 import ContactMe from '@/components/ContactMe.astro'
 ---
 
 <Layout>
-	<Welcome />
-	<AboutMe />
-	<ProfessionalExperience />
-	<PersonalProjects />
-	<Education />
-	<ContactMe />
+	<Navigation
+		sections={[
+			{ id: 'welcome', label: 'Welcome' },
+			{ id: 'professional-experience', label: 'Professional Experience' },
+			{ id: 'personal-projects', label: 'Personal Projects' },
+			{ id: 'education', label: 'Education' },
+			{ id: 'contact-me', label: 'Contact Me' }
+		]}
+	/>
+
+	<div class="lg:ml-aside transition-position duration-1000">
+		<Welcome id="welcome" />
+		<AboutMe id="about" />
+		<ProfessionalExperience id="professional-experience" />
+		<PersonalProjects id="personal-projects" />
+		<Education id="education" />
+		<ContactMe id="contact-me" />
+	</div>
 </Layout>

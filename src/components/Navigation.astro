@@ -1,0 +1,82 @@
+---
+import Envelope from '@/assets/svg/envelope.svg'
+
+interface Props {
+    sections: Section[];
+}
+
+interface Section {
+    id: string;
+    label: string;
+}
+
+const { sections }: Props = Astro.props;
+---
+<aside class="fixed left-0 top-0 z-10 flex flex-col w-aside h-screen">
+    
+    <button id="nav-toggle" class="collapsed fixed flex lg:hidden left-[calc(var(--spacing-aside)+30px)] top-7.5 w-10 h-10 items-center justify-center border border-skin cursor-pointer transition-position duration-1000 bg-bg-3">
+        <span
+            class="relative h-1 w-4 inline-block bg-skin
+            before:content-[''] before:absolute before:h-1 before:w-4 before:bg-skin before:-top-1.75 before:left-0
+            after:content-[''] after:absolute after:h-1 after:w-4 after:bg-skin after:top-1.75 after:left-0"
+        />
+    </button>
+
+    <div id="nav-content" class="collapsed relative flex flex-col left-0 justify-evenly items-center w-full h-full p-[calc(var(--spacing-aside)*0.10)] bg-bg-3 transition-position duration-1000">
+        <div class="basis-1/5 flex items-center">
+            <p class="relative text-3xl text-text-3 font-bold tracking-[5px] px-6 py-3
+                before:content-[''] before:h-5 before:w-5 before:absolute before:top-0 before:left-0 before:border-skin before:border-t-4 before:border-l-4
+                after:content-[''] after:h-5 after:w-5 after:absolute after:bottom-0 after:right-0 after:border-skin after:border-b-4 after:border-r-4"
+                >
+                Resume
+            </p>
+        </div>
+        
+        <nav class="basis-3/5">
+            <ul class="flex flex-col gap-4">
+                {sections.map((section) => (
+                    <li>
+                        <a
+                            href={`#${section.id}`}
+                            class="block font-semibold rounded-md px-4 py-1.5 text-text-1 border-b border-borders btn-hover transition-transform duration-300 hover:border-skin"
+                        >
+                            {section.label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+
+        <footer class="flex flex-col basis-1/5 justify-between gap-4 text-text-3 text-sm">
+            <div>
+                <a href="mailto:adri2001mm@gmail.com" class="hover:underline">
+                    adri2001mm@gmail.com
+                </a>
+                <Envelope class="w-5 h-5 inline-block ml-1"/>
+            </div>
+            <p class="text-xs">© 2026 Adrián Mon Maroto</p>
+        </footer>
+    </div>
+</aside>
+
+<style>
+    @media (max-width: 1023px) {
+        #nav-toggle.collapsed {
+            left: 30px !important;
+        }
+        
+        #nav-content.collapsed {
+            left: calc(-1 * var(--spacing-aside)) !important;
+        }
+    }
+</style>
+
+<script>
+    const toggleButton = document.getElementById('nav-toggle');
+    const navContent = document.getElementById('nav-content');
+    
+    toggleButton?.addEventListener('click', () => {
+        toggleButton.classList.toggle('collapsed');
+        navContent?.classList.toggle('collapsed');
+    });
+</script>
