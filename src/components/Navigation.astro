@@ -14,7 +14,7 @@ const { sections }: Props = Astro.props;
 ---
 <aside class="fixed left-0 top-0 z-10 flex flex-col w-aside h-screen">
     
-    <button class="fixed flex lg:hidden left-[calc(var(--spacing-aside)+30px)] top-7.5 w-10 h-10 items-center justify-center border border-skin cursor-pointer transition-all duration-1000 bg-bg-3">
+    <button id="nav-toggle" class="fixed flex lg:hidden left-[calc(var(--spacing-aside)+30px)] top-7.5 w-10 h-10 items-center justify-center border border-skin cursor-pointer transition-position duration-1000 bg-bg-3">
         <span
             class="relative h-1 w-4 inline-block bg-skin
             before:content-[''] before:absolute before:h-1 before:w-4 before:bg-skin before:-top-1.75 before:left-0
@@ -22,7 +22,7 @@ const { sections }: Props = Astro.props;
         />
     </button>
 
-    <div class="flex flex-col justify-evenly items-center w-full h-full p-[calc(var(--spacing-aside)*0.10)] bg-bg-3">
+    <div id="nav-content" class="relative flex flex-col left-0 justify-evenly items-center w-full h-full p-[calc(var(--spacing-aside)*0.10)] bg-bg-3 transition-position duration-1000">
         <div class="basis-1/5 flex items-center">
             <p class="relative text-3xl text-text-3 font-bold tracking-[5px] px-6 py-3
                 before:content-[''] before:h-5 before:w-5 before:absolute before:top-0 before:left-0 before:border-skin before:border-t-4 before:border-l-4
@@ -58,3 +58,25 @@ const { sections }: Props = Astro.props;
         </footer>
     </div>
 </aside>
+
+<style>
+    @media (max-width: 1023px) {
+        #nav-toggle.collapsed {
+            left: 30px !important;
+        }
+        
+        #nav-content.collapsed {
+            left: calc(-1 * var(--spacing-aside)) !important;
+        }
+    }
+</style>
+
+<script>
+    const toggleButton = document.getElementById('nav-toggle');
+    const navContent = document.getElementById('nav-content');
+    
+    toggleButton?.addEventListener('click', () => {
+        toggleButton.classList.toggle('collapsed');
+        navContent?.classList.toggle('collapsed');
+    });
+</script>
