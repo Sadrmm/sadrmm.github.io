@@ -1,12 +1,13 @@
 ---
-import WcgImage  from "../assets/imgs/wcg-logo.webp";
-import GreyhillIncidentImage from "../assets/imgs/greyhill-incident.webp";
-import BotBowlIVImage from "../assets/imgs/botbowl-iv.webp";
-import HooverImage  from "../assets/imgs/hoover-game.webp"
+import BackTrackImage from "@/assets/imgs/backtrack.webp"
+import WcgImage  from "@/assets/imgs/wcg-logo.webp";
+import GreyhillIncidentImage from "@/assets/imgs/greyhill-incident.webp";
+import BotBowlIVImage from "@/assets/imgs/botbowl-iv.webp";
+import HooverImage  from "@/assets/imgs/hoover-game.webp"
 
-import SectionTitle from "./SectionTitle.astro"
-import TimeLine from "./TimeLine.astro"
-import ProfessionalExperienceTimeLineElement from "./ProfessionalExperienceTimeLineElement.astro"
+import SectionTitle from "@/components/SectionTitle.astro"
+import TimeLine from "@/components/TimeLine.astro"
+import ProfessionalExperienceTimeLineElement from "@/components/ProfessionalExperienceTimeLineElement.astro"
 
 interface Props {
 	id: string;
@@ -17,6 +18,22 @@ const { id }: Props = Astro.props;
 <section id={id} class="flex flex-col bg-bg-2">
     <SectionTitle sectionTitle="Professional Experience"/>
     <TimeLine>
+        <ProfessionalExperienceTimeLineElement
+            title="BackTrack"
+            workingPosition="Software Developer"
+            company="Personas & Tecnología"
+            projectImage={BackTrackImage}
+            projectImageAlt="BackTrack"
+            descriptionForLinks="Machine description"
+            links={[
+                {href: "https://www.personasytecnologia.com/backtrack/", label: "personasytecnologia.com/backtrack/"}
+            ]}
+        >
+            <p>Part of the project's development team.</p>
+            <p>The project is constantly being improved.</p>
+            <br>
+            <p>The project is developed using <strong>C++</strong> with <strong>Qt</strong>, utilising <strong>Modbus</strong> communication for all industrial automation processes and connections to various <strong>PLCs</strong>.</p>
+        </ProfessionalExperienceTimeLineElement>
         <ProfessionalExperienceTimeLineElement
             title="World Challenge Game"
             workingPosition="Junior Game Developer"
@@ -51,7 +68,7 @@ const { id }: Props = Astro.props;
             company="an internship at the UJI"
             projectImage={BotBowlIVImage}
             projectImageAlt="Bot Bowl IV"
-            descriptionForLinks="Full project in"
+            descriptionForLinks="Full project"
             links={[
                 {href: "https://github.com/AdriMon27/BotBowlUJI", label: "AdriMon27/BotBowlUJI"},
             ]}
@@ -67,7 +84,7 @@ const { id }: Props = Astro.props;
             company="collaborative project of UJI with University of Glasgow"
             projectImage={HooverImage}
             projectImageAlt="Litter-Happy Hoover Madness"
-            descriptionForLinks="Complete description in"
+            descriptionForLinks="Complete description"
             links={[
                 {href: "https://crocolocobear.itch.io/hoover-game", label: "itch.io"},
             ]}

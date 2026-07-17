@@ -1,10 +1,11 @@
 ---
-import SocialButton from "./SocialButton.astro";
-import SeeCVButton from "./SeeCVButton.astro";
+import SocialButton from "@/components/SocialButton.astro";
+import SeeCVButton from "@/components/SeeCVButton.astro";
 
-import LinkedIn from "../assets/svg/linkedin.svg";
-import GitHub from "../assets/svg/github.svg";
-import ItchIO from "../assets/svg/itchio.svg";
+import LinkedIn from "@/assets/svg/linkedin.svg";
+import GitHub from "@/assets/svg/github.svg";
+import ItchIO from "@/assets/svg/itchio.svg";
+import ProfilePicture from "@/assets/profile_picture.jpg";
 
 interface Props {
 	id: string;
@@ -14,7 +15,7 @@ const { id }: Props = Astro.props;
 
 <section id={id} class="flex flex-col md:flex-row bg-bg-1 pt-20 pb-20">
 	<div class="md:order-2 md:basis-[40%] justify-items-center mt-7 mb-7">
-		<img src="src/assets/profile_picture.jpg" class="h-100 rounded-lg">
+		<img src={ProfilePicture.src} class="h-100 rounded-lg">
 	</div>
 	<div class="md:order-1 md:basis-[60%] flex flex-col">
 		<h3 class="text-3xl font-bold text-text-1">
@@ -23,7 +24,7 @@ const { id }: Props = Astro.props;
 		<h4 class="text-[28px] font-bold text-text-1 mb-4">
 			I'm <span class="text-skin">Software Developer</span>
 		</h4>
-		<div class="text-xl text-text-3">
+		<div class="text-xl text-text-3 mb-8">
 			<p>I'm a programmer who strives to write clean and scalable code.</p>
 			<p>I know how to work alone or with a team and I like to learn and get better skills that will let the final user fascinated.</p>
 		</div>

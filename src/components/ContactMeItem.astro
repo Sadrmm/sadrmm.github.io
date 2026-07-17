@@ -16,36 +16,41 @@ interface Props {
 const { icon: Icon, iconLabel, value, href }: Props = Astro.props;
 ---
 
-<div class="contact-item flex flex-col justify-center mt-4" data-contact>
-    <Icon class="w-12.5 h-12.5 text-skin"/>
-    <span class="text-text-1 text-lg font-bold">{iconLabel}</span>
+<div class="contact-item flex flex-col items-center gap-5 mt-4" data-contact>
+    <div class="flex items-center justify-center w-25 h-25 rounded-full bg-skin">
+        <Icon class="w-12.5 h-12.5 text-snow"/>
+    </div>
+    <!-- <span class="text-text-1 text-lg font-bold">{iconLabel}</span> -->
 
-    <div class="flex flex-col md:flex-row gap-3 md:items-center">
-        <span
-            class="copy-value text-text-3"
+    <div class="flex flex-col md:flex-row gap-5 items-center">
+        <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="copy-value text-text-1 text-lg font-bold underline"
             data-value={value}
         >
-            {value}
-        </span>
+            {iconLabel}
+        </a>
         
-        <div class="flex flex-row gap-3">
+        <!-- <div class="flex flex-row gap-2">
             <button
-                class="copy-btn flex items-center justify-center rounded-4xl bg-skin w-20 h-10 btn-hover transition-transform duration-300"
+                class="copy-btn flex items-center justify-center w-15 h-7.5 btn-style text-skin"
                 aria-label={`Copy ${iconLabel}`}
             >
-                <Copy class="copy-icon w-5 h-5 text-bg-1"/>
-                <Spinner class="spinner-icon w-5 h-5 text-bg-1 animate-spin hidden"/>
-                <Check class="check-icon w-5 h-5 text-bg-1 hidden"/>
-                <span class="error-icon text-lg font-bold text-bg-1 hidden">X</span>
+                <Copy class="copy-icon w-3.75 h-3.75"/>
+                <Spinner class="spinner-icon w-3.75 h-3.75 animate-spin hidden"/>
+                <Check class="check-icon w-3.75 h-3.75 hidden"/>
+                <span class="error-icon text-lg font-bold hidden">X</span>
             </button>
     
             <SocialButton
                 href={href}
                 icon={OpenSVG}
-                anchorSize="w-20 h-10"
+                anchorSize="w-15 h-7.5"
                 anchorRounded="rounded-4xl"
-                iconSize="w-5 h-5"
+                iconSize="w-3.75 h-3.75"
             />
-        </div>
+        </div> -->
     </div>
 </div>

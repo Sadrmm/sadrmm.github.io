@@ -12,9 +12,9 @@ interface Section {
 
 const { sections }: Props = Astro.props;
 ---
-<aside class="fixed left-0 top-0 z-10 flex flex-col w-aside h-screen">
+<aside id="nav-aside" class="collapsed fixed left-0 top-0 z-10 flex flex-col w-aside h-screen transition-position duration-1000">
     
-    <button id="nav-toggle" class="collapsed fixed flex lg:hidden left-[calc(var(--spacing-aside)+30px)] top-7.5 w-10 h-10 items-center justify-center border border-skin cursor-pointer transition-position duration-1000 bg-bg-3">
+    <button id="nav-toggle" class="absolute flex lg:hidden left-[calc(var(--spacing-aside)+30px)] top-7.5 w-10 h-10 items-center justify-center border border-skin cursor-pointer bg-bg-3">
         <span
             class="relative h-1 w-4 inline-block bg-skin
             before:content-[''] before:absolute before:h-1 before:w-4 before:bg-skin before:-top-1.75 before:left-0
@@ -22,7 +22,7 @@ const { sections }: Props = Astro.props;
         />
     </button>
 
-    <div id="nav-content" class="collapsed relative flex flex-col left-0 justify-evenly items-center w-full h-full p-[calc(var(--spacing-aside)*0.10)] bg-bg-3 transition-position duration-1000">
+    <div class="relative flex flex-col left-0 justify-evenly items-center w-full h-full p-[calc(var(--spacing-aside)*0.10)] bg-bg-3">
         <div class="basis-1/5 flex items-center">
             <p class="relative text-3xl text-text-3 font-bold tracking-[5px] px-6 py-3
                 before:content-[''] before:h-5 before:w-5 before:absolute before:top-0 before:left-0 before:border-skin before:border-t-4 before:border-l-4
@@ -38,7 +38,7 @@ const { sections }: Props = Astro.props;
                     <li>
                         <a
                             href={`#${section.id}`}
-                            class="block font-semibold rounded-md px-4 py-1.5 text-text-1 border-b border-borders btn-hover transition-transform duration-300 hover:border-skin"
+                            class="block font-semibold px-4 py-1.5 text-text-1 border-borders btn-style bg-bg-3! hover:border-skin"
                         >
                             {section.label}
                         </a>
@@ -61,11 +61,7 @@ const { sections }: Props = Astro.props;
 
 <style>
     @media (max-width: 1023px) {
-        #nav-toggle.collapsed {
-            left: 30px !important;
-        }
-        
-        #nav-content.collapsed {
+        #nav-aside.collapsed {
             left: calc(-1 * var(--spacing-aside)) !important;
         }
     }
@@ -73,10 +69,9 @@ const { sections }: Props = Astro.props;
 
 <script>
     const toggleButton = document.getElementById('nav-toggle');
-    const navContent = document.getElementById('nav-content');
+    const navAside = document.getElementById('nav-aside');
     
     toggleButton?.addEventListener('click', () => {
-        toggleButton.classList.toggle('collapsed');
-        navContent?.classList.toggle('collapsed');
+        navAside?.classList.toggle('collapsed');
     });
 </script>

@@ -13,5 +13,8 @@
     "astro": "^5.16.6",
     "tailwind": "^4.0.0",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
   }
 }

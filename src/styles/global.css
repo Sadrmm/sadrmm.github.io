@@ -34,8 +34,8 @@
     --spacing-aside: 300px;
 }
 
-.btn-hover {
-  @apply hover:scale-110 hover:shadow-md hover:cursor-pointer;
+.btn-style {
+  @apply rounded-xl border-b-2 bg-snow transition-all duration-300 hover:scale-110 hover:shadow-md hover:cursor-pointer;
 }
 
 section {

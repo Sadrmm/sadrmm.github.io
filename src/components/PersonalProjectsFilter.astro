@@ -11,12 +11,11 @@ const { activeCategory = PROJECT_CATEGORIES[0] } = Astro.props;
 <div class="flex flex-row flex-wrap gap-5 justify-center mb-10">
     {PROJECT_CATEGORIES.map((category) => (
         <button
-            class={`px-4 py-2 rounded-md text-lg border-b-2 bg-snow transition-all duration-300 ${
+            class={`px-4 py-2 text-lg btn-style ${
                 activeCategory === category
                     ? 'text-skin'
                     : 'text-text-1'
-            }
-                    btn-hover`}
+            }`}
             data-filter={category}
         >
             {category.charAt(0).toUpperCase() + category.slice(1)}
