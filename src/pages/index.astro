@@ -19,10 +19,13 @@ import ContactMe from '@/components/ContactMe.astro'
 			{ id: 'contact-me', label: 'Contact Me' }
 		]}
 	/>
-	<Welcome id="welcome" />
-	<AboutMe id="about" />
-	<ProfessionalExperience id="professional-experience" />
-	<PersonalProjects id="personal-projects" />
-	<Education id="education" />
-	<ContactMe id="contact-me" />
+
+	<div class="lg:ml-aside transition-position duration-1000">
+		<Welcome id="welcome" />
+		<AboutMe id="about" />
+		<ProfessionalExperience id="professional-experience" />
+		<PersonalProjects id="personal-projects" />
+		<Education id="education" />
+		<ContactMe id="contact-me" />
+	</div>
 </Layout>
