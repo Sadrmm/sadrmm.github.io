@@ -1,11 +1,13 @@
 ---
+import { Image } from "astro:assets"
+
 import SocialButton from "@/components/SocialButton.astro";
 import SeeCVButton from "@/components/SeeCVButton.astro";
 
 import LinkedIn from "@/assets/svg/linkedin.svg";
 import GitHub from "@/assets/svg/github.svg";
 import ItchIO from "@/assets/svg/itchio.svg";
-import ProfilePicture from "@/assets/profile_picture.jpg";
+import ProfilePicture from "@/assets/imgs/profile_picture.webp";
 
 interface Props {
 	id: string;
@@ -15,33 +17,39 @@ const { id }: Props = Astro.props;
 
 <section id={id} class="flex flex-col md:flex-row bg-bg-1 pt-20 pb-20">
 	<div class="md:order-2 md:basis-[40%] justify-items-center mt-7 mb-7">
-		<img src={ProfilePicture.src} class="h-100 rounded-lg">
+		<Image
+			loading={"eager"}
+			class="h-100 w-auto rounded-lg"
+			src={ProfilePicture}
+			alt="Adrián Mon Maroto"
+		/>
 	</div>
 	<div class="md:order-1 md:basis-[60%] flex flex-col">
-		<h3 class="text-3xl font-bold text-text-1">
+		<h1 class="text-3xl font-bold text-text-1">
 			Hi! My name is <span class="text-skin">Adrián Mon Maroto</span>
-		</h3>
-		<h4 class="text-[28px] font-bold text-text-1 mb-4">
+		</h1>
+		<h2 class="text-[28px] font-bold text-text-1 mb-4">
 			I'm <span class="text-skin">Software Developer</span>
-		</h4>
+		</h2>
 		<div class="text-xl text-text-3 mb-8">
 			<p>I'm a programmer who strives to write clean and scalable code.</p>
 			<p>I know how to work alone or with a team and I like to learn and get better skills that will let the final user fascinated.</p>
 		</div>
 		<div class="mt-auto grid grid-cols-[repeat(3,auto)] justify-around gap-y-5 place-items-center">
-			<div class="flex justify-center">
-				<SocialButton
-					href="https://www.linkedin.com/in/adri%C3%A1n-mon-maroto/"
-					icon={LinkedIn}
-				/>
-			</div>
+			<SocialButton
+				href="https://www.linkedin.com/in/adri%C3%A1n-mon-maroto/"
+				icon={LinkedIn}
+				aria-label="LinkedIn profile"
+			/>
 			<SocialButton
 				href="https://github.com/sadrmm"
 				icon={GitHub}
+				aria-label="GitHub profile"
 			/>
 			<SocialButton
 				href="https://sadrmm.itch.io/"
 				icon={ItchIO}
+				aria-label="Itch.io profile"
 			/>
 			<SeeCVButton extraClass="col-span-3 justify-self-stretch" />
 		</div>

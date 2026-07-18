@@ -2,18 +2,20 @@
 interface Props {
     href: string;
     icon: any;
+    "aria-label": string;
     anchorSize?: string;
     anchorRounded?: string;
     iconSize?: string;
 }
 
-const { href, icon: Icon, anchorSize="w-17.5 h-17.5", anchorRounded="rounded-[25%]", iconSize="w-12.5 h-12.5" }: Props = Astro.props;
+const { href, icon: Icon, "aria-label": ariaLabel, anchorSize="w-17.5 h-17.5", anchorRounded="rounded-[25%]", iconSize="w-12.5 h-12.5" }: Props = Astro.props;
 ---
 
 <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
+    aria-label={ariaLabel}
     class={`flex btn-style items-center justify-center ${anchorSize} leading-${anchorSize.split(' ')[1]} ${anchorRounded} text-skin`}
 >
     <Icon class={iconSize}/>
