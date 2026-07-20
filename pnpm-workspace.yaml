@@ -1,5 +1,4 @@
 allowedBuiltDependencies:
   - esbuild
   - sharp
-ignoredBuiltDependencies:
   - core-js
