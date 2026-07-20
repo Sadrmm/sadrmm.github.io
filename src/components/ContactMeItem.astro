@@ -17,10 +17,15 @@ const { icon: Icon, iconLabel, value, href }: Props = Astro.props;
 ---
 
 <div class="contact-item flex flex-col items-center gap-5 mt-4" data-contact>
-    <div class="flex items-center justify-center w-25 h-25 rounded-full bg-skin">
-        <Icon class="w-12.5 h-12.5 text-snow"/>
-    </div>
-    <!-- <span class="text-text-1 text-lg font-bold">{iconLabel}</span> -->
+    <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <div class="flex items-center justify-center w-25 h-25 rounded-full bg-skin">
+            <Icon class="w-12.5 h-12.5 text-snow"/>
+        </div>
+    </a>
 
     <div class="flex flex-col md:flex-row gap-5 items-center">
         <a
@@ -32,25 +37,5 @@ const { icon: Icon, iconLabel, value, href }: Props = Astro.props;
         >
             {iconLabel}
         </a>
-        
-        <!-- <div class="flex flex-row gap-2">
-            <button
-                class="copy-btn flex items-center justify-center w-15 h-7.5 btn-style text-skin"
-                aria-label={`Copy ${iconLabel}`}
-            >
-                <Copy class="copy-icon w-3.75 h-3.75"/>
-                <Spinner class="spinner-icon w-3.75 h-3.75 animate-spin hidden"/>
-                <Check class="check-icon w-3.75 h-3.75 hidden"/>
-                <span class="error-icon text-lg font-bold hidden">X</span>
-            </button>
-    
-            <SocialButton
-                href={href}
-                icon={OpenSVG}
-                anchorSize="w-15 h-7.5"
-                anchorRounded="rounded-4xl"
-                iconSize="w-3.75 h-3.75"
-            />
-        </div> -->
     </div>
 </div>
