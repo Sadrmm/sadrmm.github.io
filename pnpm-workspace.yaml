@@ -1,4 +1,0 @@
-allowedBuiltDependencies:
-  - esbuild
-  - sharp
-  - core-js
